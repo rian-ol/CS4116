@@ -1,0 +1,162 @@
+body{
+  background-image: linear-gradient(45deg, white, white, green);
+}
+
+div{
+  font-family: sans-serif;
+}
+
+.main{
+  display: flex;
+  width: 100%;
+}
+
+.topnav {
+  overflow: hidden;
+  border-radius: 30px;
+  background-color: transparent;
+  border-style: hidden;
+}
+.search{
+  margin: 20px;
+  max-width: 300px;
+  position: absolute;
+  right: 0;
+}
+
+img{
+  border-radius: 10px;
+}
+
+.profileCard{
+  background-color: rgb(234, 233, 233);
+  border-radius: 30px;
+  padding: 10px;
+  margin: 20px;
+  max-width: 80%;
+}
+
+.vacancieCards{
+  max-width: 45%;
+  min-width: 300px;
+  border-radius: 30px;
+  padding: 30px;
+  border-style: hidden;
+  margin: 40px;
+  font-size: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  background-color: rgb(232, 231, 231);
+  color: black;
+}
+
+.vacancieCards:hover{
+  min-width: 400px;
+}
+
+.feedCard{
+  background-color: rgb(234, 234, 234);
+  padding: 20px;
+  border-radius: 30px;
+  max-width: 80%;
+}
+
+.feedItems{
+  margin: 10px;
+  max-width: 80%;
+}
+
+.homeCards{
+  max-width: 45%;
+  border-radius: 30px;
+  padding: 30px;
+  border-style: hidden;
+  margin: 25px;
+  font-size: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  color: white;
+}
+
+.homeCards:hover{
+  box-shadow: 0 12px 24px 0 rgba(0,0,0,0.2);
+  max-width: 50%;
+}
+
+.mnCard{
+  background-color: lightblue;
+}
+
+.jCard{
+  background-color: orange;
+}
+
+.mCard{
+  background-color: lightseagreen;
+}
+
+.nCard{
+  background-color: lightgoldenrodyellow;
+}
+
+.mpCard{
+  background-color: hotpink;
+}
+
+a:active {
+  color: blue;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  max-height: 30px;
+  float: left;
+  display: block;
+  color: white;
+  background-color: green;
+  border-radius: 30px;
+  text-align: center;
+  padding: 5px;
+  padding-bottom: 35px;
+  margin: 20px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: lightgreen;
+  color: white;
+  border-radius: 20px;
+}
+
+/* Style the "active" element to highlight the current page */
+.topnav a.active {
+  color: white;
+}
+
+/* Style the search box inside the navigation bar */
+.topnav input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+  border-radius: 10px;
+}
+
+/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+@media screen and (max-width: 600px) {
+  .topnav a, .topnav input[type=text] {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;
+  }
+}
