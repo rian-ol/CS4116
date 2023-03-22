@@ -27,7 +27,9 @@
                     </div>
                     <div ><button class="btn btn-primary profile-button" class="button" type="submit">Log In</button></div>
                     </form>
+                    
                 </div>
+                <div ><a href="registerpage.php"><button class="btn btn-primary profile-button " class="button" type="submit">Register</button></a></div>
             </div>
         </div>
     </div>
