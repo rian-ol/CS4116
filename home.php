@@ -10,15 +10,15 @@
 <body>
    <div class="main container-fluid">
       <nav class="navbar navbar-fixed-top">
-         <a class="navbar-brand" href="home.html">
+         <a class="navbar-brand" href="home.php">
            <img src="DevLink.jpg" height="40" alt="DevLink">
          </a>
       </nav>
          <div class="topnav">
-           <a class="nav-link "href="vacancies.html">Vacancies</a>
-           <a class="nav-link" href="feed.html">Feed</a>
-           <a class="nav-link" href="connections.html">Connections</a>
-           <a class="nav-link" href="myProfile.html">My Profile</a>
+           <a class="nav-link "href="vacancies.php">Vacancies</a>
+           <a class="nav-link" href="feed.php">Feed</a>
+           <a class="nav-link" href="connections.php">Connections</a>
+           <a class="nav-link" href="myProfile.php">My Profile</a>
            <form class="d-flex search" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
@@ -27,25 +27,25 @@
        </div>
 
     <div>
-      <a style="text-decoration: none" href="vacancies.html">
+      <a style="text-decoration: none" href="vacancies.php">
          <div class="homeCards jCard">
             <h2>Vacancies</h2>
             <p>Find your next job and advance your career with job listings tailored to your skills and interests.</p>
          </div>
       </a>
-         <a style="text-decoration: none" href="feed.html">
+         <a style="text-decoration: none" href="feed.php">
        <div class="homeCards mnCard" style="margin-left: auto;">
           <h2>Feed</h2>
           <p>Grow your professional network by connecting with other professionals and staying up-to-date with their careers.</p>
        </div>
     </a>
-    <a style="text-decoration: none" href="connections.html">
+    <a style="text-decoration: none" href="connections.php">
        <div class="homeCards mCard">
           <h2>Connections</h2>
           <p>Stay connected with your professional network and communicate with ease through messaging.</p>
        </div>
     </a>
-    <a style="text-decoration: none" href="myProfile.html">
+    <a style="text-decoration: none" href="myProfile.php">
        <div class="homeCards mpCard" style="margin-left: auto;">
           <h2>My Profile</h2>
           <p>Showcase your skills, experience, and education to potential employers and connect with other professionals.</p>
