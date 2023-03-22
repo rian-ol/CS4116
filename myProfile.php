@@ -10,14 +10,14 @@
 <body>
     <div class="main container-fluid">
         <nav class="navbar navbar-fixed-top">
-           <a class="navbar-brand" href="home.html">
+           <a class="navbar-brand" href="home.php">
              <img src="DevLink.jpg" height="40" alt="DevLink">
            </a>
         </nav>
            <div class="topnav">
              <a class="nav-link "href="vacancies.php">Vacancies</a>
-             <a class="nav-link" href="feed.html">Feed</a>
-             <a class="nav-link" href="connections.html">Connections</a>
+             <a class="nav-link" href="feed.php">Feed</a>
+             <a class="nav-link" href="connections.php">Connections</a>
              <a class="nav-link" href="myProfile.php">My Profile</a>
              <form class="d-flex search" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
