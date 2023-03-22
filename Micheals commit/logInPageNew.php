@@ -8,45 +8,27 @@
   
 </head>
 <body>
-    <div class="main container-fluid">
-        <nav class="navbar navbar-fixed-top">
-           <a class="navbar-brand" href="home.html">
-             <img src="DevLink.jpg" height="40" alt="DevLink">
-           </a>
-        </nav>
-           <div class="topnav">
-             <a class="nav-link "href="vacancies.html">Vacancies</a>
-             <a class="nav-link" href="feed.html">Feed</a>
-             <a class="nav-link" href="connections.html">Connections</a>
-             <a class="nav-link" href="myProfile.html">My Profile</a>
-             <form class="d-flex search" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-           </div>
-         </div>
-
-         <div class="container-fluid profileCard">
-          <div class="row">
-              <div class="col-md-8 border-right">
-                  <div class="p-3 py-5">
-                      <div class="d-flex justify-content-between align-items-center mb-3">
-                          <h4 class="text-right">Log In</h4>
-                      </div>
-                      <form action="logIn.php" method="post">
-                      <div class="row mt-2">
-                          <div class="col-md-6"><label class="labels">Email</label><input type="text" class="form-control" placeholder="Email" name="Email"></div>
-                      </div>
-                      <div class="row mt-3">
-                          <div class="col-md-6"><label class="labels">Password</label><input type="Password" class="form-control" placeholder="Password" name="Password"></div>
-                  </div>
-                      <div class="mt-5 text-center"><button class="btn btn-primary profile-button" class="button" type="submit">Log In</button></div>
-                      </form>
-                  </div>
-              </div>
-              </div>
-          </div>
-      </div>
-      </div>
-      </div>
+    <div class="">
+        <div class="d-flex  ">
+            <img src="DevLink.jpg" height="75" alt="DevLink">
+        </div>
+        <div class="d-flex  justify-content-around">
+            <div>
+                <div >
+                    <div class="d-flex justify-content-between align-items-right mb-3">
+                        <h4>Log In</h4>
+                    </div>
+                    <form action="logIn.php" method="post">
+                    <div >
+                        <div ><label class="labels">Email</label><input type="text" class="form-control" placeholder="Email" name="Email"></div>
+                    </div>
+                    <div>
+                        <div ><label class="labels">Password</label><input type="Password" class="form-control" placeholder="Password" name="Password"></div>
+                    </div>
+                    <div ><button class="btn btn-primary profile-button" class="button" type="submit">Log In</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
