@@ -29,7 +29,7 @@
                     </form>
                     
                 </div>
-                <div ><a href="registerpage.php"><button class="btn btn-primary profile-button " class="button" type="submit">Register</button></a></div>
+                <div ><a href="registerpage.php"><button class="btn btn-primary profile-button " class="button" type="submit">Create an account</button></a></div>
             </div>
         </div>
     </div>
