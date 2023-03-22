@@ -158,3 +158,23 @@ body{
       border: 1px solid #ccc;
     }
   }
+
+.loginCard{
+  max-width: 55%;
+  min-width: 300px;
+  border-radius: 30px;
+  padding: 30px;
+  border-style: hidden;
+  margin: 40px;
+  font-size: 15px;
+  box-shadow: 0 4px 8px 0 rgba(18, 147, 46, 0.2);
+  transition: 0.3s;
+  background-color: rgb(35, 100, 153);
+  color: rgb(0, 0, 0);
+  justify-content: center;
+}
+
+.loginCard input{
+  flex-direction: row;
+  
+}
