@@ -27,7 +27,6 @@
         });  
     });  
 </script>
-
 <script>  
     $(document).ready(function(){  
         $('#user').keyup(function(){  
@@ -48,8 +47,6 @@
         });  
     });  
 </script>
-
-
 </head>
 <body>
     <div class="main container-fluid">
@@ -107,6 +104,130 @@
                 <div id="userList"></div> 
           </form>
           </div></div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-4"><a style="text-decoration: none" href="vacancies.html">
+            <div class="vacancieCards">
+               <h2>Job Example 1</h2>
+               <table class="table">
+                <tr>
+                    <th scope="row">Location:</th>
+                    <td>"Limerick"</td>
+                </tr>
+                <tr>
+                    <th scope="row">Skills Required:</th>
+                    <td>"C++"</td>
+                </tr>
+                <tr>
+                    <th scope="row">Experience:</th>
+                    <td>"3 years"</td>
+                </tr>
+               </table>
+            </div>
+         </a></div>
+        <div class="col-4"><a style="text-decoration: none" href="vacancies.html">
+            <div class="vacancieCards">
+               <h2>Job Example 2</h2>
+               <table class="table">
+                <tr>
+                    <th scope="row">Location:</th>
+                    <td>"Limerick"</td>
+                </tr>
+                <tr>
+                    <th scope="row">Skills Required:</th>
+                    <td>"C++"</td>
+                </tr>
+                <tr>
+                    <th scope="row">Experience:</th>
+                    <td>"3 years"</td>
+                </tr>
+               </table>
+            </div>
+         </a></div>
+
+         <div class="w-100"></div>
+      
+        <div class="col-4"><a style="text-decoration: none" href="vacancies.html">
+            <div class="vacancieCards">
+               <h2>Job Example 3</h2>
+               <table class="table">
+                <tr>
+                    <th scope="row">Location:</th>
+                    <td>"Limerick"</td>
+                </tr>
+                <tr>
+                    <th scope="row">Skills Required:</th>
+                    <td>"C++"</td>
+                </tr>
+                <tr>
+                    <th scope="row">Experience:</th>
+                    <td>"3 years"</td>
+                </tr>
+               </table>
+            </div>
+         </a></div>
+        <div class="col-4"><a style="text-decoration: none" href="vacancies.html">
+            <div class="vacancieCards">
+               <h2>Job Example 4</h2>
+               <table class="table">
+                <tr>
+                    <th scope="row">Location:</th>
+                    <td>"Limerick"</td>
+                </tr>
+                <tr>
+                    <th scope="row">Skills Required:</th>
+                    <td>"C++"</td>
+                </tr>
+                <tr>
+                    <th scope="row">Experience:</th>
+                    <td>"3 years"</td>
+                </tr>
+               </table>
+            </div>
+         </a></div>
+
+         <div class="w-100"></div>
+
+         <div class="col-4"><a style="text-decoration: none" href="vacancies.html">
+            <div class="vacancieCards">
+               <h2>Job Example 5</h2>
+               <table class="table">
+                <tr>
+                    <th scope="row">Location:</th>
+                    <td>"Limerick"</td>
+                </tr>
+                <tr>
+                    <th scope="row">Skills Required:</th>
+                    <td>"C++"</td>
+                </tr>
+                <tr>
+                    <th scope="row">Experience:</th>
+                    <td>"3 years"</td>
+                </tr>
+               </table>
+            </div>
+         </a></div>
+
+         <div class="col-4"><a style="text-decoration: none" href="vacancies.html">
+            <div class="vacancieCards">
+               <h2>Job Example 6</h2>
+               <table class="table">
+                <tr>
+                    <th scope="row">Location:</th>
+                    <td>"Limerick"</td>
+                </tr>
+                <tr>
+                    <th scope="row">Skills Required:</th>
+                    <td>"C++"</td>
+                </tr>
+                <tr>
+                    <th scope="row">Experience:</th>
+                    <td>"3 years"</td>
+                </tr>
+               </table>
+            </div>
+         </a></div>
       </div>
 
 </body>
