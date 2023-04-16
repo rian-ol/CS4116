@@ -49,6 +49,12 @@ body{
     background-color: rgb(232, 231, 231);
     color: black;
   }
+
+.vacancieCards:hover{
+    border-style: solid;
+    border-color: orange;
+    padding: 40px;
+  }
   
 .createAndSearch{
     max-width: 55%;
