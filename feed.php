@@ -25,7 +25,6 @@
             </form>
            </div>
          </div>
-
          <div class="container-fluid feedCard">
           <div class="border border-left border-right px-0">
             <div>
@@ -73,18 +72,16 @@
                     <div>
                       <a href="">
                         <h6 class="text-body">
-                          Miley Cyrus
-                          <span class="small text-muted font-weight-normal">@mileycyrus</span>
+                          Kate Riley
+                          <span class="small text-muted font-weight-normal">@kateriley</span>
                           <span class="small text-muted font-weight-normal"> • </span>
                           <span class="small text-muted font-weight-normal">2h</span>
                           <span><i class="fas fa-angle-down float-end"></i></span>
                         </h6>
                       </a>
                       <p style="line-height: 1.2;">
-                        Lorem ipsum dolor, sit amet <a href="">#consectetur</a> adipisicing elit.
-                        Nobis assumenda eveniet ipsum libero mollitia vero doloremque
-                        <a href="">#perspiciatis</a> molestiae omnis, quam iure dicta reprehenderit
-                        distinctio facere labore atque, sit <a href="">#ratione</a> quo.
+                        Some random text absolutely random <a href="">#mysterylink</a> more text.
+                        Text text texty text. Text text texty text Text text texty text. Text text texty text
                       </p>
                       <ul class="list-unstyled d-flex justify-content-between mb-0 pe-xl-5">
                         <li>
@@ -106,16 +103,15 @@
                     <div>
                       <a href="#">
                         <h6 class="text-body">
-                          Miley Cyrus
-                          <span class="small text-muted font-weight-normal">@mileycyrus</span>
+                          Kate Riley
+                          <span class="small text-muted font-weight-normal">@kateriley</span>
                           <span class="small text-muted font-weight-normal"> • </span>
                           <span class="small text-muted font-weight-normal">3h</span>
                           <span><i class="fas fa-angle-down float-end"></i></span>
                         </h6>
                       </a>
                       <p style="line-height: 1.2;">
-                        Nobis assumenda eveniet ipsum libero mollitia vero doloremque molestiae
-                        reprehenderit.
+                        Look at this!!
                       </p>
                       <div class="card border mb-3 shadow-0" style="max-width: 540px;">
                         <div class="row g-0">
@@ -126,14 +122,10 @@
                           <div class="col-md-9">
                             <div class="card-body">
                               <p class="card-text" style="line-height: 1;">
-                                Title of the news
+                                Stuff
                               </p>
                               <p class="card-text small mb-0" style="line-height: 1.2;">
-                                This is a wider card with supporting text below as a natural lead-in
-                                to additional content.
-                              </p>
-                              <p class="card-text small mb-0" style="line-height: 1.2;">
-                                <i class="fas fa-link fa-xs pe-1"></i>example.pl
+                                Data.
                               </p>
                             </div>
                           </div>
@@ -167,10 +159,8 @@
                         </h6>
                       </a>
                       <p style="line-height: 1.2;">
-                        Lorem ipsum dolor, sit amet <a href="">#consectetur</a> adipisicing elit.
-                        Officiis, <a href="">#repellat</a>. Error cumque temporibus eum pariatur
-                        ducimus facere? Obcaecati fugit, nobis eos <a href="">#deserunt</a> odit
-                        libero voluptatibus, iste laudantium, tempore ratione ut.
+                        Some random text absolutely random <a href="">#mysterylink</a> more text.
+                        Text text texty text. Text text texty text Text text texty text. Text text texty text
                       </p>
                       <div class="card border mb-3 shadow-0" style="max-width: 540px;">
                         <div class="row g-0">
@@ -184,11 +174,7 @@
                                 Title of the news
                               </p>
                               <p class="card-text small mb-0" style="line-height: 1.2;">
-                                This is a wider card with supporting text below as a natural lead-in
-                                to additional content.
-                              </p>
-                              <p class="card-text small mb-0" style="line-height: 1.2;">
-                                <i class="fas fa-link fa-xs pe-1"></i>example.pl
+                               News.
                               </p>
                             </div>
                           </div>
@@ -222,9 +208,7 @@
                         </h6>
                       </a>
                       <p style="line-height: 1.2;">
-                        Error cumque temporibus eum pariatur ducimus facere? Obcaecati fugit, nobis
-                        eos <a href="">#deserunt</a> odit libero voluptatibus, iste laudantium,
-                        tempore ratione ut.
+                        Heres an image.
                       </p>
                       <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp"
                         class="img-fluid rounded mb-3" alt="Fissure in Sandstone" />
@@ -256,8 +240,8 @@
                         </h6>
                       </a>
                       <p style="line-height: 1.2;">
-                        Obcaecati fugit, nobis eos odit libero voluptatibus, iste laudantium,
-                        tempore ratione ut.
+                        Some random text absolutely random <a href="">#mysterylink</a> more text.
+                        Text text texty text. Text text texty text Text text texty text. Text text texty text and heres a video.
                       </p>
                       <div class="ratio ratio-16x9 mb-3">
                         <iframe src="https://www.youtube.com/embed/vlDzYIIOYmM" title="YouTube video"
@@ -277,7 +261,5 @@
                   </div>
                 </div>
               </div>
-
-
 </body>
 </html>
