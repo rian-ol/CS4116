@@ -63,26 +63,12 @@
              <a class="nav-link" href="feed.php">Feed</a>
              <a class="nav-link" href="connections.php">Connections</a>
              <a class="nav-link" href="myProfile.php">My Profile</a>
-             </form>
-           </div>
-         </div>
-         <form action="searchByName.php" method="post">
-                <div class="d-flex search">
-                <div class="vacancieCards">
-                   <h2>Search Users Based on Name</h2>
-                   <input type="text" name="user" id="user" placeholder="Enter Programming skill" />  
-                   <div id="userList"></div> 
-                   </table>
-                </div>
-             </a></div>
-             </form>
            </div>
          </div>
 
-         <form action="createVacancyMethod.php" method="post">
-         <div class="row justify-content-center">
-            <div class="col-6">
-                <div class="vacancieCards">
+    <div class="row">
+        <div class="col-8"><form action="createVacancyMethod.php" method="post">
+            <div class="col-6 createAndSearch">
                    <h2>Create Vacancy</h2>
                    <table class="table">
                     <tr>
@@ -104,22 +90,24 @@
                    </table>
                    <input class="button" type="submit"
                      name="login" value="Create Vacancy">
-                </div>
              </a></div>
-            </form>
-
-
-
+            </form></div>
+        <div class="col-4">
+            <div class="col-6 createAndSearch">
             <form action="searchBySkillName.php" method="post">
+                <h2>Search Vacancy Based on Skill</h2>
+                <input type="text" name="skill" id="skill" placeholder="Enter Programming skill" />  
+                <div id="skillList"></div>  
+         </form>
+          </div>
+          <div class="col-6 createAndSearch">
+            <form action="searchByName.php" method="post">
+                <h2>Search Users Based on Name</h2>
+                <input type="text" name="user" id="user" placeholder="Enter Name" />  
+                <div id="userList"></div> 
+          </form>
+          </div></div>
+      </div>
 
-                <div class="col-4">
-                <div class="vacancieCards">
-                   <h2>Search Vacancy Based on Skill</h2>
-                   <input type="text" name="skill" id="skill" placeholder="Enter Programming skill" />  
-                   <div id="skillList"></div> 
-                </div>
-             </a></div>                        
-
-</form>
 </body>
 </html>
