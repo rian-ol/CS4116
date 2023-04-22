@@ -6,12 +6,14 @@ include('connection.php');
         $Age =  $_REQUEST['Age'];
         $Gender = $_REQUEST['Gender'];
         $Location = $_REQUEST['Location'];
-        $Experience = $_REQUEST['Experience'];
+        $experience = $_REQUEST['experience'];
+        $iUniqueNumber = rand(1,9999999);
+        $skill_name = $_REQUEST['skill_name'];
 
-        $sql1 = "INSERT INTO profile (Age, Gender, Location, Experience) VALUES ('$Age', '$Gender', '$Location', '$Experience')";
-        $sql2 = "INSERT INTO user (First_Name, Surname) Values ('$First_Name', '$Surname')";
+        $sql1 = "INSERT INTO profile (Age, Gender, Location, experience, User_id, skill_name) VALUES ('$Age', '$Gender', '$Location', '$experience', '$iUniqueNumber', '$skill_name' )";
+        $sql2 = "INSERT INTO user (First_Name, Surname, User_id) Values ('$First_Name', '$Surname', '$iUniqueNumber')";
          
-        if(mysqli_query($conn, $sql1) && (mysqli_query($con, $sql2))){ 
+        if(mysqli_query($con, $sql2) && (mysqli_query($con, $sql1))){ 
                 header("Location:myProfile.php");
         } else{
             echo "ERROR: Hush! Sorry $sql. "
