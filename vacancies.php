@@ -47,6 +47,26 @@
         });  
     });  
 </script>
+<script>  
+    $(document).ready(function(){  
+        $('#vacancy').keyup(function(){  
+            var query = $(this).val();  
+            if(query != '')  
+            {  
+                $.ajax({  
+                    url:"searchByVacancyName.php",  
+                    method:"POST",  
+                    data:{query:query},  
+                    success:function(data)  
+                    {  
+                        
+                        $('#vacancyList').html(data);  
+                    }  
+                });  
+            }  
+        });  
+    });  
+</script>
 </head>
 <body>
     <div class="main container-fluid">
@@ -60,6 +80,7 @@
              <a class="nav-link" href="feed.php">Feed</a>
              <a class="nav-link" href="connections.php">Connections</a>
              <a class="nav-link" href="myProfile.php">My Profile</a>
+             <a class="nav-link" href="index.php">Log out</a>
            </div>
          </div>
 
@@ -75,6 +96,22 @@
                     <tr>
                         <th scope="row">Vacancy Description:</th>
                         <td><input type="Vacancy_description" name="Vacancy_description" id="Vacancy_description" placeholder="Enter Vacancy Description" /></td>
+                    </tr>
+                                        <tr>
+                    <?php
+include("connection.php");
+include("dropdown.php");
+?>
+<select name="skill_name">
+   <option>Select Skill required</option>
+  <?php 
+  foreach ($options as $option) {
+  ?>
+    <option><?php echo $option["skill_name"]; ?> </option>
+    <?php 
+    }
+   ?>
+</select>
                     </tr>
                     <tr>
                         <th scope="row">Experience:</th>
@@ -95,21 +132,31 @@
                 <h2>Search Vacancy Based on Skill</h2>
                 <input type="text" name="skill" id="skill" placeholder="Enter Programming skill" />  
                 <div id="skillList"></div>  
+                
          </form>
           </div>
           <div class="col-6 createAndSearch">
-            <form action="searchByName.php" method="post">
+            <form action="myProfile.php" method="post">
                 <h2>Search Users Based on Name</h2>
                 <input type="text" name="user" id="user" placeholder="Enter Name" />  
                 <div id="userList"></div> 
           </form>
           </div></div>
       </div>
-
+          </div>
+          <div class="col-6 createAndSearch">
+            <form action="searchByVacancyName.php" method="post">
+                <h2>Search for Vacancies</h2>
+                <input type="text" name="vacancy" id="vacancy" placeholder="Enter Name" />  
+                <div id="vacancyList"></div> 
+          </form>
+          
+      </div>
       <div class="row justify-content-center">
         <div class="col-4"><a style="text-decoration: none" href="vacancies.html">
             <div class="vacancieCards">
                <h2>Job Example 1</h2>
+               
                <table class="table">
                 <tr>
                     <th scope="row">Location:</th>
@@ -126,14 +173,26 @@
                </table>
             </div>
          </a></div>
-        <div class="col-4"><a style="text-decoration: none" href="vacancies.html">
+        <div class="col-4"><a style="text-decoration: none" >
             <div class="vacancieCards">
                <h2>Job Example 2</h2>
                <table class="table">
-                <tr>
-                    <th scope="row">Location:</th>
-                    <td>"Limerick"</td>
-                </tr>
+                                        <tr>
+                    <?php
+include("connection.php");
+include("vacancyNames.php");
+?>
+<select name="Vacancy_name">
+   <option>Select Skill required</option>
+  <?php 
+  foreach ($options as $option) {
+  ?>
+    <option><?php echo $option["Vacancy_name"]; ?> </option>
+    <?php 
+    }
+   ?>
+</select>
+                    </tr>
                 <tr>
                     <th scope="row">Skills Required:</th>
                     <td>"C++"</td>
