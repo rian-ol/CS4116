@@ -3,6 +3,7 @@ session_start();
     include('connection.php');  
     $Email = $_POST['Email'];  
     $Password = $_POST['Password'];  
+    
       
         //to prevent from mysqli injection  
         $Email = stripcslashes($Email);  
@@ -14,13 +15,20 @@ session_start();
         $result = mysqli_query($con, $sql);  
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
         $count = mysqli_num_rows($result);  
-          
+        $userid = $result->fetch_column(1);
+        $userid = $row["User_id"];
         if($count == 1){  
-            header("Location:vacancies.php");
+            setcookie("user", $userid, time()+7200,"/");
+            header("Location:feed.php");
+            $message = "You are logged in.";
+  echo "<script type='text/javascript'>alert('$message');</script>" ; 
+            
   exit(); 
         }  
-        else{  
-            echo "<h1> Login failed. Invalid username or password.</h1>";  
+        else{   
+  header("Location:index.php");
+              $message = "Username and/or Password incorrect.\\nTry again.";
+  echo "<script type='text/javascript'>alert('$message');</script>";
         }     
         exit(); 
 ?>
