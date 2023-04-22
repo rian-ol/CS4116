@@ -17,7 +17,7 @@
   
 </head>
 <body>
-    <div class="main container-fluid">
+    <div class="main container-fluid d-flex justify-content-around">
         <nav class="navbar navbar-fixed-top">
            <a class="navbar-brand" href="home.php">
              <img src="DevLink.jpg" height="40" alt="DevLink">
