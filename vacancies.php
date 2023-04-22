@@ -78,7 +78,7 @@
 </script>
 </head>
 <body>
-    <div class="main container-fluid">
+    <div class="main container-fluid d-flex justify-content-around">
         <nav class="navbar navbar-fixed-top">
            <a class="navbar-brand" href="home.php">
              <img src="DevLink.jpg" height="40" alt="DevLink">
@@ -162,10 +162,9 @@ include("dropdown.php");
           
       </div>
       <div class="row justify-content-center">
-        <div class="col-4"><a style="text-decoration: none" href="vacancies.html">
+        <div class="col-4"><a style="text-decoration: none" href="vacancy.html">
             <div class="vacancieCards">
                <h2>Job Example 1</h2>
-               
                <table class="table">
                 <tr>
                     <th scope="row">Location:</th>
@@ -177,38 +176,26 @@ include("dropdown.php");
                 </tr>
                 <tr>
                     <th scope="row">Experience:</th>
-                    <td>"3 years"</td>
+                    <td>"2 years"</td>
                 </tr>
                </table>
             </div>
          </a></div>
-        <div class="col-4"><a style="text-decoration: none" >
+        <div class="col-4"><a style="text-decoration: none" href="vacancy.html">
             <div class="vacancieCards">
                <h2>Job Example 2</h2>
                <table class="table">
-                                        <tr>
-                    <?php
-include("connection.php");
-include("vacancyNames.php");
-?>
-<select name="Vacancy_name">
-   <option>Select Skill required</option>
-  <?php 
-  foreach ($options as $option) {
-  ?>
-    <option><?php echo $option["Vacancy_name"]; ?> </option>
-    <?php 
-    }
-   ?>
-</select>
-                    </tr>
+                <tr>
+                    <th scope="row">Location:</th>
+                    <td>"Limerick"</td>
+                </tr>
                 <tr>
                     <th scope="row">Skills Required:</th>
                     <td>"C++"</td>
                 </tr>
                 <tr>
                     <th scope="row">Experience:</th>
-                    <td>"3 years"</td>
+                    <td>"2 years"</td>
                 </tr>
                </table>
             </div>
@@ -216,7 +203,7 @@ include("vacancyNames.php");
 
          <div class="w-100"></div>
       
-        <div class="col-4"><a style="text-decoration: none" href="vacancies.html">
+        <div class="col-4"><a style="text-decoration: none" href="vacancy.html">
             <div class="vacancieCards">
                <h2>Job Example 3</h2>
                <table class="table">
@@ -230,12 +217,12 @@ include("vacancyNames.php");
                 </tr>
                 <tr>
                     <th scope="row">Experience:</th>
-                    <td>"3 years"</td>
+                    <td>"2 years"</td>
                 </tr>
                </table>
             </div>
          </a></div>
-        <div class="col-4"><a style="text-decoration: none" href="vacancies.html">
+        <div class="col-4"><a style="text-decoration: none" href="vacancy.html">
             <div class="vacancieCards">
                <h2>Job Example 4</h2>
                <table class="table">
@@ -249,7 +236,7 @@ include("vacancyNames.php");
                 </tr>
                 <tr>
                     <th scope="row">Experience:</th>
-                    <td>"3 years"</td>
+                    <td>"2 years"</td>
                 </tr>
                </table>
             </div>
@@ -257,7 +244,7 @@ include("vacancyNames.php");
 
          <div class="w-100"></div>
 
-         <div class="col-4"><a style="text-decoration: none" href="vacancies.html">
+         <div class="col-4"><a style="text-decoration: none" href="vacancy.html">
             <div class="vacancieCards">
                <h2>Job Example 5</h2>
                <table class="table">
@@ -271,13 +258,13 @@ include("vacancyNames.php");
                 </tr>
                 <tr>
                     <th scope="row">Experience:</th>
-                    <td>"3 years"</td>
+                    <td>"2 years"</td>
                 </tr>
                </table>
             </div>
          </a></div>
 
-         <div class="col-4"><a style="text-decoration: none" href="vacancies.html">
+         <div class="col-4"><a style="text-decoration: none" href="vacancy.html">
             <div class="vacancieCards">
                <h2>Job Example 6</h2>
                <table class="table">
@@ -291,7 +278,7 @@ include("vacancyNames.php");
                 </tr>
                 <tr>
                     <th scope="row">Experience:</th>
-                    <td>"3 years"</td>
+                    <td>"2 years"</td>
                 </tr>
                </table>
             </div>
