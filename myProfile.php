@@ -19,6 +19,7 @@
              <a class="nav-link" href="feed.php">Feed</a>
              <a class="nav-link" href="connections.php">Connections</a>
              <a class="nav-link" href="myProfile.php">My Profile</a>
+             <a class="nav-link" href="index.php">Log out</a>
              <form class="d-flex search" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>
@@ -44,15 +45,73 @@
                       </div>
                       <div class="row mt-3">
                           <div class="col-md-12"><label class="labels">Age</label><input type="text" class="form-control" placeholder="enter Age" name="Age"></div>
-                          <div class="col-md-12"><label class="labels">Gender</label><input type="text" class="form-control" placeholder="enter Gender" name="Gender"></div>
-                          <div class="col-md-12"><label class="labels">Bio</label><input type="text" class="form-control" placeholder="Enter Bio" name="Bio"></div>
-                      </div>
+                                                <div class="row mt-3">
+                      <div class="col-md-12"><label class="labels">Gender</label></div>
+                           <method="post" placeholder="Gender">
+                           
+   <select name="Gender">
+   <option name="Gender">Male</option>
+    <option name="Gender">Female</option>
+    <option name="Gender">Other</option>
+  </select>
+</form>
+<div class="row mt-3">
+                      <div class="col-md-12"><label class="labels">Location</label></div>
+                           <method="post" placeholder="Location">
+                           
+   <select name="Location">
+   <option name="Location">Limerick</option>
+    <option name="Location">Galway</option>
+    <option name="Location">Dublin</option>
+    <option name="Location">Cork</option>
+  </select>
+</form>
+                      
+                       
                       <div class="row mt-3">
-                          <div class="col-md-6"><label class="labels">Skills</label><input type="text" class="form-control" placeholder="Skills" name=""></div>
-                          <div class="col-md-6"><label class="labels">Location</label><input type="text" class="form-control" name="Location" placeholder="Location"></div>
-                      </div>
-                      <div class="row mt-3">
-                        <div class="col-md-12"><label class="labels">Experience</label><input type="text" class="form-control" placeholder="experience" name="experience"></div> <br>
+                      <div class="col-md-12"><label class="labels">Experience in years</label>
+                           <method="post" placeholder="experience">
+                           
+   <select name="experience">
+   <option name="experience">1</option>
+    <option name="experience">2</option>
+    <option name="experience">3</option>
+    <option name="experience">4</option>
+       <option name="experience">5</option>
+    <option name="experience">6</option>
+    <option name="experience">7</option>
+    <option name="experience">8</option>
+       <option name="experience">9</option>
+    <option name="experience">10</option>
+    <option name="experience">11</option>
+    <option name="experience">12</option>
+       <option name="experience">13</option>
+    <option name="experience">14</option>
+    <option name="experience">15</option>
+    <option name="experience">16</option>
+       <option name="experience">17</option>
+    <option name="experience">18</option>
+    <option name="experience">19</option>
+    <option name="experience">20</option>
+  </select>
+</form> <br>
+                  
+                  
+                                        <div class="row mt-3">
+                                           <?php
+include("connection.php");
+include("dropdown.php");
+?>
+<select name="skill_name">
+   <option>Select speciality skill</option>
+  <?php 
+  foreach ($options as $option) {
+  ?>
+    <option><?php echo $option["skill_name"]; ?> </option>
+    <?php 
+    }
+   ?>
+</select>
                   </div>
                       <div class="mt-5 text-center"><button class="btn btn-primary profile-button" class="button" type="submit">Save Profile</button></div>
                   </div>
