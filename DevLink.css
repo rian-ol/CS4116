@@ -1,6 +1,6 @@
 body{
-    background-image: linear-gradient(45deg, white, white, green);
-  }
+  background-image: linear-gradient(45deg, white, white, green);
+}
   
   div{
     font-family: sans-serif;
@@ -50,13 +50,28 @@ body{
     color: black;
   }
 
-.vacancieCards:hover{
+  .vacancieCards:hover{
     border-style: solid;
     border-color: orange;
     padding: 40px;
   }
-  
-.createAndSearch{
+
+  .vacancyCard{
+    max-width: 55%;
+    min-width: 250px;
+    border-radius: 30px;
+    padding: 30px;
+    margin: 40px;
+    font-size: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    color: black;
+    border-style: solid;
+    border-color: orange;
+    background-color: rgb(232, 231, 231);
+  }
+
+  .createAndSearch{
     max-width: 55%;
     min-width: 250px;
     border-radius: 30px;
@@ -71,8 +86,11 @@ body{
   }
   .createAndSearch:hover{
     width: 700px;
-    background-color: rgb(162, 212, 243);
+    background-color: rgb(8, 187, 247);
   }
+
+  
+
   
   .feedCard{
     background-color: rgb(234, 234, 234);
@@ -133,7 +151,7 @@ body{
     float: left;
     display: block;
     color: white;
-    background-color: green;
+    background-color: linear-gradient(45deg, white, blue);
     border-radius: 30px;
     text-align: center;
     padding: 5px;
@@ -145,7 +163,7 @@ body{
   
   /* Change the color of links on hover */
   .topnav a:hover {
-    background-color: lightgreen;
+    background-color:green;
     color: white;
     border-radius: 20px;
   }
@@ -199,4 +217,26 @@ body{
 .loginCard input{
   flex-direction: row;
   
+}
+
+.pot-connect{
+  max-width: 25%;
+  margin: 0 auto;
+  float: left;
+  padding: 5%;
+  box-sizing: border-box;
+}
+
+.limit4::after{
+  content: "";
+  clear: both;
+  display: table;
+}
+
+@media (max-width: 767px){
+  .pot-connect{
+    max-width: 100%;
+    margin: 0;
+    float: none;
+  }
 }
