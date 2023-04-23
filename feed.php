@@ -75,7 +75,7 @@
                 <div class="d-flex p-3 border-bottom">
                   <div class="d-flex w-100 ps-3">
                     <div>
-                      <a href="">
+                      <a href="feedProfile.php">
                         <h6 class="text-body">
                           Kate Riley
                           <span class="small text-muted font-weight-normal">@kateriley</span>
@@ -94,7 +94,7 @@
                 <div class="d-flex p-3 border-bottom">
                   <div class="d-flex w-100 ps-3">
                     <div>
-                      <a href="#">
+                      <a href="feedProfile.php">
                         <h6 class="text-body">
                           Kate Riley
                           <span class="small text-muted font-weight-normal">@kateriley</span>
@@ -119,7 +119,7 @@
                 <div class="d-flex p-3 border-bottom">
                   <div class="d-flex w-100 ps-3">
                     <div>
-                      <a href="#">
+                      <a href="feedProfile.php">
                         <h6 class="text-body">
                           Bob Marley
                           <span class="small text-muted font-weight-normal">@bobmarley</span>
@@ -144,7 +144,7 @@
                 <div class="d-flex p-3 border-bottom mb-5">
                   <div class="d-flex w-100 ps-3">
                     <div>
-                      <a href="">
+                      <a href="feedProfile.php">
                         <h6 class="text-body">
                           Mark Twain
                           <span class="small text-muted font-weight-normal">@marktawin</span>
