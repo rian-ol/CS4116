@@ -3,6 +3,8 @@
   if(!isset($_COOKIE['user'])){
     header('Location:index.php');
     exit;
+  }elseif ($_COOKIE['user'] =='admin') {
+    header('Location:Afeed.php');
   }
 
 ?>
