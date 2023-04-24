@@ -1,9 +1,9 @@
      <?php
  
- $servername = "sql8.freesqldatabase.com";
- $username = "sql8605107";
- $password = "fInLpz9ULj";
- $dbname = "sql8605107";
+ $servername = "localhost";
+ $username = "root";
+ $password = "";
+ $dbname = "DevLink";
  
  // Create connection
  $conn = new mysqli($servername, $username, $password, $dbname);
@@ -15,7 +15,7 @@
         $Email =  $_REQUEST['Email'];
         $Password = $_REQUEST['Password'];
 
-        $sql = "INSERT INTO user (Email, Password) VALUES ('$Email', '$Password')";
+        $sql = "INSERT INTO user (Email, Password, User_Type) VALUES ('$Email', '$Password', 'User')";
          
         if(mysqli_query($conn, $sql)){
                 header("Location:logInPageNew.php");
