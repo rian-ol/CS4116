@@ -54,20 +54,24 @@
 
                 <h1>THIS COMPANY HAS BEEN BANNED, PLEASE CONTACT AN ADMIN</h1>
                     <?php
-            }else{
-            ?>
+            }else if($isAuthourised == '0'){ ?> 
+                <h1>THIS  COMPANY  HAS  YET  TO  BE  AUTHOURISED,  PLEASE  WAIT  FOR  ASSISSTANCE  FROM  AN  ADMIN</h1>
+               <?php
+                }else{
+                    ?>
             <div class="row">
               <div class="col-md-8 border-right">
                 <div class="p-3 py-5">
+                
+            
+                   
+                        
                   <div class="d-flex justify-content-between align-items-center mb-3">
                     <h4 class="text-right"><?php echo$organisation_name;?></h4>
                   </div>
                   <div class="row mt-2">
                     <div class="col-md-12"><label class="labels">Description:</label><input type="text"  class="form-control" value="<?php echo$organisation_name; ?>" name="ororganisation_name" readonly></div>
-                    <?php 
-                    if($isAuthourised == '0'){ ?>
-                    <div class="col-md-6"><label class="labels">Authourised?:</label><input type="text"  class="form-control" value="<?php echo$organisation_name; ?> has not been authourised by an admin yet" name="ororganisation_name" readonly></div>
-                    <?php
+                   <?php
                     }?>
 
                 </div>
@@ -79,7 +83,6 @@
       
          </form>
          <?php
-            }
             ?>
          <div class="mt-5 text-center"><button class="btn btn-primary profile-button " class="button" type="submit">My Profile</button></div>
       </div>

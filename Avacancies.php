@@ -5,6 +5,25 @@
     exit;
   }
 
+  include('connection.php');
+  $sql = "SELECT v.Vacancy_id, v.Vacancy_name, v.Vacancy_description, v.Location, v.isDeleted, o.organisation_name FROM vacancy v Join organisation o ON v.Organisation_id = o.organisation_id;";  
+  $result = mysqli_query($con, $sql);  
+
+  $vacancies = array();
+  while ($row = mysqli_fetch_assoc($result)) {
+    $key = $row['Vacancy_id'];
+    if(!array_key_exists($key, $vacancies)){
+      $vacancies[$key] = array(
+        'Vacancy_id' => $row['Vacancy_id'],
+        'Vacancy_name'=> $row['Vacancy_name'],
+        'Vacancy_description'=> $row['Vacancy_description'],
+        'Location'=> $row['Location'],
+        'isDeleted'=> $row['isDeleted'],
+        'organisation_name' => $row['organisation_name']
+
+      );
+    }
+  }
 ?>
 
 <!DOCTYPE html>
@@ -32,3 +51,51 @@
             </form>
            </div>
          </div>
+
+
+         <?php
+        $int = 0;
+        ?>
+          <div class="limit4"></div>
+        <?php
+        foreach ($vacancies as $vacancy) {
+          if ($int % 4 == 0) {
+            ?>
+            <div class="limit4"></div>
+              <?php
+          }
+          ?>
+            <div class="pot-connect">  
+                
+                <h2> <?php echo $vacancy['organisation_name']; ?></h2>
+                
+                <p>Vacancy name: <?php echo $vacancy['Vacancy_name']; ?></p>
+                <p>Vacancy description: <?php echo $vacancy['Vacancy_description']; ?></p>
+                <p>Location: <?php echo $vacancy['Location']; ?></p>
+               <?php
+               if ($vacancy['isDeleted'] == 0) {
+
+               ?>
+                <form action="deleteVacancy.php">
+                    <div ><button class="btn btn-primary profile-button " style="float:right;" class="button" name="Vacancy_id" type="submit" value="<?php echo $vacancy['Vacancy_id']; ?>">Delete</button><!--</a>--></div>  
+                    </form>
+               <?php
+                }else{
+                  ?>
+                   <form action="unDeleteVacancy.php">
+                    <div ><button class="btn btn-primary profile-button " style="float:right;" class="button" name="Vacancy_id" type="submit" value="<?php echo $vacancy['Vacancy_id']; ?>">unDelete</button><!--</a>--></div>  
+                    </form>
+                    <?php
+                }
+                  ?>
+            </div>
+          </div>
+                  <?php
+                  $int++;
+                }
+                  ?>
+
+
+
+</body>
+</html>

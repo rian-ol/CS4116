@@ -10,7 +10,7 @@
  
 
   include('connection.php');
-    $sql = "SELECT u.User_id, u.First_Name, u.Surname, o.organisation_id, o.organisation_name, o.organisation_description, o.isAuthourised FROM user u Join organisation o ON u.User_id = o.User_id;";  
+    $sql = "SELECT u.User_id, u.First_Name, u.Surname, o.organisation_id, o.organisation_name, o.organisation_description, o.isAuthourised, o.isDeleted FROM user u Join organisation o ON u.User_id = o.User_id;";  
     $result = mysqli_query($con, $sql);  
 
     $companies = array();
@@ -23,7 +23,8 @@
           'Surname'=> $row['Surname'],
           'organisation_name'=> $row['organisation_name'],
           'organisation_description'=> $row['organisation_description'],
-          'isAuthourised'=> $row['isAuthourised']
+          'isAuthourised'=> $row['isAuthourised'],
+          'isDeleted' => $row['isDeleted']
         );
       }
     }
@@ -79,15 +80,27 @@
                 <p>Company creator: <?php echo $company['First_Name'] . " " . $company['Surname']; ?></p>
                 <?php
                     if($company['isAuthourised'] == 0){?>
-                        <form action="autoriseCompany.php">
-                        <div ><button class="btn btn-primary profile-button " style="float:left;" name="organisation_id" type="submit" value="<?php echo $company['organisation_id']; ?>">Authorise</button><!--</a>--></div>  
+                        <form action="authouriseCompany.php">
+                        <div ><button class="btn btn-primary profile-button " style="float:left;" name="organisation_id" type="submit" value="<?php echo $company['organisation_id']; ?>">Authorise</button></div>  
                         </form>
                 <?php
                     }
-                ?>
-                    <form action="deleteCompany.php">
-                    <div ><button class="btn btn-primary profile-button " style="float:right;" class="button" name="organisation_id" type="submit" value="<?php echo $company['organisation_id']; ?>">Delete</button><!--</a>--></div>  
+                    if ($company['isDeleted'] == "0") {
+                    ?>
+                    
+                    <form action="deleteCompany.php" method="post">
+                    <div ><button class="btn btn-primary profile-button " style="float:right;" class="button" name="organisation_id" type="submit" value="<?php echo $company['organisation_id']; ?>">Delete</button></div>  
                     </form>
+                    <?php
+                    } else{
+                        
+                        ?>
+                        <form action="undeleteCompany.php" method="post">
+                         <div ><button class="btn btn-primary profile-button " style="float:right;" class="button" name="organisation_id" type="submit" value="<?php echo $company['organisation_id']; ?>">Undelete </button></div>  
+                         </form>
+                    <?php
+                    }
+                    ?>
             </div>
           </div>
                   <?php

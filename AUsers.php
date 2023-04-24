@@ -10,7 +10,7 @@
  
 
   include('connection.php');
-    $sql = "SELECT u.User_id, u.First_Name, u.Surname, p.Age, p.Gender, p.Location, p.skill_name FROM user u Join profile p ON u.User_id = p.User_id;";  
+    $sql = "SELECT u.User_id, u.First_Name, u.Surname, u.isDeleted, p.Age, p.Gender, p.Location, p.skill_name FROM user u Join profile p ON u.User_id = p.User_id;";  
     $result = mysqli_query($con, $sql);  
 
     $Connects = array();
@@ -28,6 +28,7 @@
           'Gender'=> $row['Gender'],
           'Location'=> $row['Location'],
           'skill_name'=> $row['skill_name'],
+          'isDeleted'=> $row['isDeleted']
         );
       }
     }
@@ -80,9 +81,21 @@
               <p>Gender: <?php echo $connect['Gender']; ?></p>
               <p>Location: <?php echo $connect['Location']; ?></p>
               <p>Skill: <?php echo $connect['skill_name']; ?></p>
-              <form action="deleteUser.php">
-              <div ><!--<a href="connectUser.php"> --><button class="btn btn-primary profile-button " class="button" name="user_id" type="submit" value="<?php echo $connect['User_id']; ?>">Delete User</button><!--</a>--></div>  
-              </form>
+              <?php 
+                if($connect['isDeleted'] == "0"){
+              ?>
+                <form action="deleteUser.php">
+                  <div ><!--<a href="connectUser.php"> --><button class="btn btn-primary profile-button " class="button" name="User_id" type="submit" value="<?php echo $connect['User_id']; ?>">Delete User</button><!--</a>--></div>  
+                </form>
+              <?php
+                }else{
+                  ?>
+                  <form action="unDeleteUser.php">
+                    <div ><!--<a href="connectUser.php"> --><button class="btn btn-primary profile-button " class="button" name="User_id" type="submit" value="<?php echo $connect['User_id']; ?>">Undelete User</button><!--</a>--></div>  
+                  </form>
+              <?php
+                }
+                ?>
             </div>
           </div>
                   <?php
