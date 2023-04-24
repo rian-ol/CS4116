@@ -73,8 +73,10 @@
               <?php
           }
           ?>
-            <div class="pot-connect">  
-              <h2> <?php echo $connect['First_Name']. " " . $connect['Surname']; ?></h2>
+           <div class="pot-connect">  
+              <div class="col-4"><a style="text-decoration: none">
+                <div class="vacancieCards">
+                 <h2> <?php echo $connect['First_Name']. " " . $connect['Surname']; ?></h2>
               <p>Age: <?php echo $connect['Age']; ?></p>
               <p>Gender: <?php echo $connect['Gender']; ?></p>
               <p>Location: <?php echo $connect['Location']; ?></p>
@@ -82,8 +84,10 @@
               <form action="connectUser.php">
               <div ><!--<a href="connectUser.php"> --><button class="btn btn-primary profile-button " class="button" name="user_id" type="submit" value="<?php echo $connect['User_id']; ?>">Connect with user</button><!--</a>--></div>  
               </form>
+              </div>
             </div>
           </div>
+          <div class="w-100"></div>
                   <?php
                   $int++;
                 }
