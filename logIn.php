@@ -1,5 +1,6 @@
 <?php     
 session_start(); 
+
     include('connection.php');  
     $Email = $_POST['Email'];  
     $Password = $_POST['Password'];  
@@ -15,20 +16,25 @@ session_start();
         $result = mysqli_query($con, $sql);  
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
         $count = mysqli_num_rows($result);  
-        $userid = $result->fetch_column(1);
         $userid = $row["User_id"];
+        $userType = $row["User_Type"];
         if($count == 1){  
-            setcookie("user", $userid, time()+7200,"/");
-            header("Location:feed.php");
-            $message = "You are logged in.";
-  echo "<script type='text/javascript'>alert('$message');</script>" ; 
-            
+            if ($userType == 'admin') {
+                setcookie("user", $userType, time()+7200,"/");
+                header("Location:home.php");
+            }else{
+                setcookie("user", $userid, time()+7200,"/");
+                $_SESSION['login'] = "Sucessfully logged in as $Email";
+                 header("Location:home.php");
+                }
   exit(); 
         }  
-        else{   
-  header("Location:index.php");
-              $message = "Username and/or Password incorrect.\\nTry again.";
-  echo "<script type='text/javascript'>alert('$message');</script>";
-        }     
+        else{  
+             $_SESSION['status'] = "Wrong username/password, please try again";
+    header("Location:index.php");
+  
+        }
+        
+             
         exit(); 
 ?>
