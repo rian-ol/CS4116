@@ -95,8 +95,6 @@
           }else{
           ?>
             <div class="pot-connect">  
-              <div class="col-4">
-                <div class="vacancieCards">
               <h2> <?php echo $connect['First_Name']. " " . $connect['Surname']; ?></h2>
               <p>Age: <?php echo $connect['Age']; ?></p>
               <p>Gender: <?php echo $connect['Gender']; ?></p>
@@ -134,7 +132,7 @@
                     <?php
                   }else{
                   ?>
-                  <form action="disconnectUser.php">
+                  <form action="connectUser.php">
                       <div ><!--<a href="connectUser.php"> --><button class="btn btn-primary profile-button " class="button" name="user_id" type="submit" value="<?php echo $connect['User_id']; ?>">Disconnect with user</button><!--</a>--></div>  
                   </form>
                 <?php
