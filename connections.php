@@ -8,7 +8,7 @@
  
 
   include('connection.php');
-    $sql = "SELECT u.User_id, u.First_Name, u.Surname, p.Age, p.Gender, p.Location, p.skill_name FROM user u Join profile p ON u.User_id = p.User_id;";  
+    $sql = "SELECT u.User_id, u.First_Name, u.Surname, u.isDeleted, p.Age, p.Gender, p.Location, p.skill_name FROM user u Join profile p ON u.User_id = p.User_id;";  
     $result = mysqli_query($con, $sql);  
 
     $Connects = array();
@@ -26,15 +26,35 @@
           'Gender'=> $row['Gender'],
           'Location'=> $row['Location'],
           'skill_name'=> $row['skill_name'],
+          'isDeleted'=>$row['isDeleted']
         );
       }
     }
     
+
+
+  $sql = "SELECT * FROM connections;";  
+  $result = mysqli_query($con, $sql);  
+
+  $connections = array();
+  while ($row = mysqli_fetch_assoc($result)) {
+    $key = $row['Connection_id'];
+    if(!array_key_exists($key, $connections)){
+      $connections[$key] = array(
+        'Connection_id' => $row['Connection_id'],
+        'User_1'=> $row['User_1'],
+        'User_2'=> $row['User_2'],
+        'isConnected'=> $row['isConnected']
+      );
+    }
+
+  }
     
 
 ?>
 
-
+<!DOCTYPE html>
+<html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -71,26 +91,65 @@
             ?>
             <div class="limit4"></div>
               <?php
-          }
+          }if ($connect['isDeleted'] == 1) {
+          }else{
           ?>
-           <div class="pot-connect">  
-              <div class="col-4"><a style="text-decoration: none">
+            <div class="pot-connect">  
+              <div class="col-4">
                 <div class="vacancieCards">
-                 <h2> <?php echo $connect['First_Name']. " " . $connect['Surname']; ?></h2>
+              <h2> <?php echo $connect['First_Name']. " " . $connect['Surname']; ?></h2>
               <p>Age: <?php echo $connect['Age']; ?></p>
               <p>Gender: <?php echo $connect['Gender']; ?></p>
               <p>Location: <?php echo $connect['Location']; ?></p>
               <p>Skill: <?php echo $connect['skill_name']; ?></p>
-              <form action="connectUser.php">
-              <div ><!--<a href="connectUser.php"> --><button class="btn btn-primary profile-button " class="button" name="user_id" type="submit" value="<?php echo $connect['User_id']; ?>">Connect with user</button><!--</a>--></div>  
-              </form>
-              </div>
+
+              <?php 
+              
+              $count = 0;
+              $var = false;
+              foreach($connections as $connection){
+                if ($connection['User_1'] == $_COOKIE['user'] || $connection['User_2'] == $_COOKIE['user'] ) {
+                  if ($connection['User_1'] == $connect['User_id'] || $connection['User_2'] ==$connect['User_id']) {
+                        $var = true;
+                        if ($connection['isConnected'] == "0") {
+                          $varAccepted = false;
+                        }
+                        break;
+                      }
+                  }
+                }
+                if ($var == false) {
+                  ?>
+                  <form action="connectUser.php">
+                     <div ><!--<a href="connectUser.php"> --><button class="btn btn-primary profile-button " class="button" name="user_id" type="submit" value="<?php echo $connect['User_id']; ?>">Connect with user</button><!--</a>--></div>  
+                  </form>
+
+                  <?php
+                } else{
+                  if (!$varAccepted) {
+                    ?>
+                      <form action="connectUser.php">
+                         <div ><!--<a href="connectUser.php"> --><button class="btn btn-primary profile-button " class="button" name="user_id" type="submit" value="<?php echo $connect['User_id']; ?>">Cancel connect request</button><!--</a>--></div>  
+                      </form>
+                    <?php
+                  }else{
+                  ?>
+                  <form action="disconnectUser.php">
+                      <div ><!--<a href="connectUser.php"> --><button class="btn btn-primary profile-button " class="button" name="user_id" type="submit" value="<?php echo $connect['User_id']; ?>">Disconnect with user</button><!--</a>--></div>  
+                  </form>
+                <?php
+                  }
+                }   
+              ?>
+                
+              
+              
             </div>
           </div>
           <div class="w-100"></div>
                   <?php
                   $int++;
-                }
+                }}
                   ?>
 
 
