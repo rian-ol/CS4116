@@ -70,21 +70,68 @@
                     <h4 class="text-right"><?php echo$organisation_name;?></h4>
                   </div>
                   <div class="row mt-2">
-                    <div class="col-md-12"><label class="labels">Description:</label><input type="text"  class="form-control" value="<?php echo$organisation_name; ?>" name="ororganisation_name" readonly></div>
-                   <?php
-                    }?>
+                    <div class="col-md-6"><label class="labels">Description:</label><input type="text"  class="form-control" value="<?php echo$organisation_name; ?>" name="ororganisation_name" readonly></div>
+                   
 
                 </div>
               </div>
                       
             </div>
+              
             
           </div>
       
          </form>
+         
+            <?php
+                    }?>
          <?php
             ?>
          <div class="mt-5 text-center"><button class="btn btn-primary profile-button " class="button" type="submit">My Profile</button></div>
+
       </div>
+      <div class="col-8"><form action="createVacancyMethod.php" method="post">
+            <div class="col-6 createAndSearch">
+                   <h2>Create Vacancy</h2>
+                   <table class="table">
+                    <tr>
+                        <th scope="row">Vacancy Name:</th>
+                        <td><input type="Vacancy_name" name="Vacancy_name" id="Vacancy_name"  /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Vacancy Description:</th>
+                        <td><input type="Vacancy_description" name="Vacancy_description" id="Vacancy_description" /></td>
+                    </tr>
+                                        <tr>
+                    <?php
+            include("connection.php");
+            include("dropdown.php");
+            ?>
+            <select name="skill_name">
+              <option>Select Skill required</option>
+              <?php 
+              foreach ($options as $option) {
+              ?>
+                <option><?php echo $option["skill_name"]; ?> </option>
+                <?php 
+                }
+              ?>
+              <!-- <th scope="row">Experience:</th>
+              <td>    -->
+                <!-- <input type="number" min="0" max="20" name="Experience_required" id="Experienced_required"required> -->
+            <tr>
+                <th scope="row">Location:</th>
+                <td>   <select name="Location">
+              <option name="Location">Limerick</option>
+                <option name="Location">Galway</option>
+                <option name="Location">Dublin</option>
+                <option name="Location">Cork</option>
+              </select></td>
+                                </tr>
+                              </table>
+                              <input class="button" type="submit"
+                                name="login" value="Create Vacancy">
+                        </a></div>
+                        </form></div>
   </div>
 </body>
