@@ -24,6 +24,7 @@
     $location = $row["Location"];
     $gender = $row["Gender"];
     $skill = $row["skill_name"];
+    $company = $rowU['compCreated'];
 ?>
 
 <!DOCTYPE html>
@@ -36,23 +37,29 @@
   
 </head>
 <body>
-    <div class="main container-fluid">
+    <div class="main container-fluid d-flex justify-content-around">
         <nav class="navbar navbar-fixed-top">
            <a class="navbar-brand" href="home.php">
              <img src="DevLink.jpg" height="40" alt="DevLink">
            </a>
         </nav>
-        <div class="topnav">
+           <div class="topnav">
              <a class="nav-link "href="vacancies.php">Vacancies</a>
              <a class="nav-link" href="feed.php">Feed</a>
              <a class="nav-link" href="connections.php">Connections</a>
              <a class="nav-link" href="myProfile.php">My Profile</a>
-             <form class="d-flex search" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-             </form>
-            </div>
+           </div>
          </div>
+          <?php 
+          if($company == '0'){ ?>
+          <div class="mt-5 text-center"><a href="createCompany.php" text-color ="white"><button class="btn btn-primary profile-button " class="button" type="submit" >Create a Company</button></a></div>
+          <?php
+          }else{
+            ?>
+          <div class="mt-5 text-center"><a href="myCompany.php" text-color ="white"><button class="btn btn-primary profile-button " class="button" type="submit" >My company</button></a></div>
+            <?php
+          }
+          ?>
          <form action="editprofile.php" method="post">
           <div class="container-fluid profileCard">
             <div class="row">
