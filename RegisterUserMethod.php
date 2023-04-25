@@ -18,6 +18,13 @@
         $sql = "INSERT INTO user (Email, Password, User_Type) VALUES ('$Email', '$Password', 'User')";
          
         if(mysqli_query($conn, $sql)){
+
+            $sql = "select * from user where Email = '$Email' and Password = '$Password'";  
+            $result = mysqli_query($conn, $sql);  
+            $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
+            $userid = $row["User_id"];
+
+                setcookie("user", $userid, time()+7200,"/");
                 header("Location:logInPageNew.php");
         } else{
             echo "ERROR: Hush! Sorry $sql. "
