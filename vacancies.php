@@ -1,10 +1,29 @@
 <?php
 
-  if(!isset($_COOKIE['user'])){
+if(!isset($_COOKIE['user'])){
     header('Location:index.php');
     exit;
   }
 
+  include('connection.php');
+  $sql = "SELECT v.Vacancy_id, v.Vacancy_name, v.Vacancy_description, v.Location, v.isDeleted, o.organisation_name FROM vacancy v Join organisation o ON v.Organisation_id = o.organisation_id;";  
+  $result = mysqli_query($con, $sql);  
+
+  $vacancies = array();
+  while ($row = mysqli_fetch_assoc($result)) {
+    $key = $row['Vacancy_id'];
+    if(!array_key_exists($key, $vacancies)){
+      $vacancies[$key] = array(
+        'Vacancy_id' => $row['Vacancy_id'],
+        'Vacancy_name'=> $row['Vacancy_name'],
+        'Vacancy_description'=> $row['Vacancy_description'],
+        'Location'=> $row['Location'],
+        'isDeleted'=> $row['isDeleted'],
+        'organisation_name' => $row['organisation_name']
+
+      );
+    }
+  }
 ?>
 
 <!DOCTYPE html>
@@ -93,49 +112,8 @@
            </div>
          </div>
 
-    <div class="row">
-        <div class="col-8"><form action="createVacancyMethod.php" method="post">
-            <div class="col-6 createAndSearch">
-                   <h2>Create Vacancy</h2>
-                   <table class="table">
-                    <tr>
-                        <th scope="row">Vacancy Name:</th>
-                        <td><input type="Vacancy_name" name="Vacancy_name" id="Vacancy_name" placeholder="Enter Vacancy Name" /></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Vacancy Description:</th>
-                        <td><input type="Vacancy_description" name="Vacancy_description" id="Vacancy_description" placeholder="Enter Vacancy Description" /></td>
-                    </tr>
-                                        <tr>
-                    <?php
-include("connection.php");
-include("dropdown.php");
-?>
-<select name="skill_name">
-   <option>Select Skill required</option>
-  <?php 
-  foreach ($options as $option) {
-  ?>
-    <option><?php echo $option["skill_name"]; ?> </option>
-    <?php 
-    }
-   ?>
-</select>
-                    </tr>
-                    <tr>
-                        <th scope="row">Experience:</th>
-                        <td><input type="Experienced_required" name="Experienced_required" id="Experienced_required" placeholder="Enter Experience recommended (in years)" /></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Location:</th>
-                        <td><input type="Location" name="Location" id="Location" placeholder="Enter Location" /></td>
-                    </tr>
-                   </table>
-                   <input class="button" type="submit"
-                     name="login" value="Create Vacancy">
-             </a></div>
-            </form></div>
-        <div class="col-4">
+   
+            <div class="col-4">
             <div class="col-6 createAndSearch">
             <form action="searchBySkillName.php" method="post">
                 <h2>Search Vacancy Based on Skill</h2>
@@ -161,129 +139,42 @@ include("dropdown.php");
           </form>
           
       </div>
-      <div class="row justify-content-center">
-        <div class="col-4"><a style="text-decoration: none" href="vacancy.html">
-            <div class="vacancieCards">
-               <h2>Job Example 1</h2>
-               <table class="table">
-                <tr>
-                    <th scope="row">Location:</th>
-                    <td>"Limerick"</td>
-                </tr>
-                <tr>
-                    <th scope="row">Skills Required:</th>
-                    <td>"C++"</td>
-                </tr>
-                <tr>
-                    <th scope="row">Experience:</th>
-                    <td>"2 years"</td>
-                </tr>
-               </table>
+       <?php
+        $int = 0;
+        ?>
+          <div class="limit4"></div>
+        <?php
+        foreach ($vacancies as $vacancy) {
+          if ($int % 4 == 0) {
+            ?>
+            <div class="limit4"></div>
+              <?php
+          }
+          
+          if ($vacancy['isDeleted'] == 1) {
+            }else{
+            ?>
+            
+            <div class="pot-connect">  
+                
+                <h2> <?php echo $vacancy['organisation_name']; ?></h2>
+                
+                <p>Vacancy name: <?php echo $vacancy['Vacancy_name']; ?></p>
+                <p>Vacancy description: <?php echo $vacancy['Vacancy_description']; ?></p>
+                <p>Location: <?php echo $vacancy['Location']; ?></p>
+                <form action="">
+                    <div ><button class="btn btn-primary profile-button " style="float:right;" class="button" name="Vacancy_id" type="submit" value="<?php echo $vacancy['Vacancy_id']; ?>">Apply</button><!--</a>--></div>  
+                </form>
+               
+                    <?php
+                }
+                  ?>
             </div>
-         </a></div>
-        <div class="col-4"><a style="text-decoration: none" href="vacancy.html">
-            <div class="vacancieCards">
-               <h2>Job Example 2</h2>
-               <table class="table">
-                <tr>
-                    <th scope="row">Location:</th>
-                    <td>"Limerick"</td>
-                </tr>
-                <tr>
-                    <th scope="row">Skills Required:</th>
-                    <td>"C++"</td>
-                </tr>
-                <tr>
-                    <th scope="row">Experience:</th>
-                    <td>"2 years"</td>
-                </tr>
-               </table>
-            </div>
-         </a></div>
-
-         <div class="w-100"></div>
-      
-        <div class="col-4"><a style="text-decoration: none" href="vacancy.html">
-            <div class="vacancieCards">
-               <h2>Job Example 3</h2>
-               <table class="table">
-                <tr>
-                    <th scope="row">Location:</th>
-                    <td>"Limerick"</td>
-                </tr>
-                <tr>
-                    <th scope="row">Skills Required:</th>
-                    <td>"C++"</td>
-                </tr>
-                <tr>
-                    <th scope="row">Experience:</th>
-                    <td>"2 years"</td>
-                </tr>
-               </table>
-            </div>
-         </a></div>
-        <div class="col-4"><a style="text-decoration: none" href="vacancy.html">
-            <div class="vacancieCards">
-               <h2>Job Example 4</h2>
-               <table class="table">
-                <tr>
-                    <th scope="row">Location:</th>
-                    <td>"Limerick"</td>
-                </tr>
-                <tr>
-                    <th scope="row">Skills Required:</th>
-                    <td>"C++"</td>
-                </tr>
-                <tr>
-                    <th scope="row">Experience:</th>
-                    <td>"2 years"</td>
-                </tr>
-               </table>
-            </div>
-         </a></div>
-
-         <div class="w-100"></div>
-
-         <div class="col-4"><a style="text-decoration: none" href="vacancy.html">
-            <div class="vacancieCards">
-               <h2>Job Example 5</h2>
-               <table class="table">
-                <tr>
-                    <th scope="row">Location:</th>
-                    <td>"Limerick"</td>
-                </tr>
-                <tr>
-                    <th scope="row">Skills Required:</th>
-                    <td>"C++"</td>
-                </tr>
-                <tr>
-                    <th scope="row">Experience:</th>
-                    <td>"2 years"</td>
-                </tr>
-               </table>
-            </div>
-         </a></div>
-
-         <div class="col-4"><a style="text-decoration: none" href="vacancy.html">
-            <div class="vacancieCards">
-               <h2>Job Example 6</h2>
-               <table class="table">
-                <tr>
-                    <th scope="row">Location:</th>
-                    <td>"Limerick"</td>
-                </tr>
-                <tr>
-                    <th scope="row">Skills Required:</th>
-                    <td>"C++"</td>
-                </tr>
-                <tr>
-                    <th scope="row">Experience:</th>
-                    <td>"2 years"</td>
-                </tr>
-               </table>
-            </div>
-         </a></div>
-      </div>
+          </div>
+                  <?php
+                  $int++;
+                }
+                  ?>
 
 </body>
 </html>
