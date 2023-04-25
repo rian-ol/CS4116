@@ -18,11 +18,16 @@ session_start();
         $count = mysqli_num_rows($result);  
         $userid = $row["User_id"];
         $userType = $row["User_Type"];
+        $profileComp = $row['profileComp'];
         if($count == 1){  
             if ($userType == 'admin') {
                 setcookie("user", $userType, time()+7200,"/");
                 header("Location:home.php");
-            }else{
+            }elseif ($profileComp == "0") {
+                setcookie("user", $userid, time()+7200,"/");
+                header("Location:loginPageNew.php");
+            }
+            else{
                 setcookie("user", $userid, time()+7200,"/");
                 $_SESSION['login'] = "Sucessfully logged in as $Email";
                  header("Location:home.php");
